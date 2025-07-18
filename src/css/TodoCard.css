@@ -1,0 +1,15 @@
+.todo-card{
+    width: 18rem;
+}
+
+.todo-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.todo-card {
+    transition: transform 0.2s;
+}
+
+.todo-card:hover {
+    transform: scale(1.05);
+}
