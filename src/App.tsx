@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./css/App.css";
 import TodoCollection from "./components/TodoCollection";
+import NewTodo from "./components/NewTodo";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -62,8 +63,23 @@ function App() {
     setTodos((current) => current.filter((todo) => todo.id !== id));
   };
 
+const addNewTodo = (title: string, description: string) =>
+{
+  setTodos((current) => [
+    ...current,
+    {
+      id: current.length > 0 ? Math.max(...current.map(todo => todo.id)) + 1 : 1,
+      title,
+      description,
+      status: "new",
+    },
+  ]);
+};
+
   return (
     <>
+      <NewTodo onAddTodo={(title: string, description: string) => addNewTodo(title, description)}/>
+
       <TodoCollection
         status="new"
         title="Todo"
