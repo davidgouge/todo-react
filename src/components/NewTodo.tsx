@@ -22,7 +22,7 @@ function NewTodo({ onAddTodo }: NewTodoProps) {
     >
       <div className="mb-3">
         <label htmlFor="todo-title" className="form-label">
-          Title
+          Todo
         </label>
         <input
           id="todo-title"
